@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import { environmentDev } from '../../environments/environment.development';
 import {Observable} from 'rxjs';
 import { Employee } from '../Interfaces/employee';
+import { environmentProd } from 'src/environments/environment.production';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  private endpoint: string = environmentDev.endPoint
+  private endpoint: string =  environmentProd.endPoint
   private apiUrl:string = this.endpoint + 'employee/'
 
   constructor(private http:HttpClient) { }
