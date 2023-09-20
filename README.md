@@ -1,5 +1,7 @@
 # ConsorcioUi
 
+This is an application made with the following: C#, Angular, Azure Services..., where the databases and the API are hosted in the Azure portal, also like the backend server is in dockerhub
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
 ## Development server
