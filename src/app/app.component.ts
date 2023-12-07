@@ -4,6 +4,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { DialogAddEditComponent } from "./Dialogs/dialog-add-edit/dialog-add-edit.component";
 
+
  
 
 import { Employee } from "./Interfaces/employee";
@@ -78,9 +79,6 @@ export class AppComponent implements AfterViewInit,OnInit{
       duration: 3000, 
     });
   }
-
-
-
 
   ngOnInit(): void {
    this.showEmployees() 

@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import { environmentDev } from 'src/environments/environment.development';
 import {Observable} from 'rxjs';
 import { Department } from '../Interfaces/department';
-import { environmentProd } from 'src/environments/environment.production';
+// import { environmentProd } from 'src/environments/environment.production';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartmentService {
-  private endpoint: string =  environmentProd.endPoint
+  
+  private endpoint: string =  environmentDev.endPoint
   private apiUrl:string = this.endpoint + 'department/'
 
 
