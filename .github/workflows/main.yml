@@ -1,0 +1,44 @@
+name: CONSORCIO UI CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # Ensure compatibility with Angular CLI
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the Angular project
+      - name: Build Angular project
+        run: npm run build
+
+      # Step 5: Run tests (optional)
+      - name: Run tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+      # Step 6: Archive build artifacts (optional)
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist/
