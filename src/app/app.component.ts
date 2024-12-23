@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ViewChild, OnInit} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog} from '@angular/material/dialog';
 import { DialogAddEditComponent } from "./Dialogs/dialog-add-edit/dialog-add-edit.component";
 
  

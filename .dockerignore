@@ -1,0 +1,42 @@
+# Ignore Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Ignore Angular build artifacts
+dist/
+out-tsc/
+.tmp/
+
+# Ignore logs
+*.log
+
+# Ignore environment files (they may contain sensitive data)
+src/environments/environment*.ts
+
+# Ignore IDE and editor-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Git-related files
+.git/
+.gitignore
+
+# Ignore Docker-related files
+.dockerignore
+docker-compose*
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+
+# Ignore coverage reports
+coverage/
