@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Consorcio_ui:build:production"
+              "buildTarget": "Consorcio_ui:build:production"
             },
             "development": {
-              "browserTarget": "Consorcio_ui:build:development"
+              "buildTarget": "Consorcio_ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Consorcio_ui:build"
+            "buildTarget": "Consorcio_ui:build"
           }
         },
         "test": {
