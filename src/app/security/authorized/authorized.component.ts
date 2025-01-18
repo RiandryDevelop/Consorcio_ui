@@ -1,5 +1,5 @@
 import { SecurityService } from './../security.service';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 
 @Component({
   selector: 'app-authorized',
@@ -8,8 +8,14 @@ import { Component, inject } from '@angular/core';
 })
 export class AuthorizedComponent {
 SecurityService = inject(SecurityService);
+@Input()
+role?:string
 
 isAuthorized():boolean {
-  return this.SecurityService.isLogged();
+  if (this.role) {
+    return this.SecurityService.obtainRole() === this.role;
+  }else{
+    return this.SecurityService.isLogged();
+  }
 };
 }

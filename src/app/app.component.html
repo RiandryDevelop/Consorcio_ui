@@ -1,74 +1,140 @@
-<app-authorized>
-  <ng-container authorized> </ng-container>
+<!-- Authorized -->
+<app-authorized role="admin">
+  <h1>Authorized</h1>
+  <ng-container authorized>
+    <div class="main">
+      <h1>Employee List</h1>
+      <button mat-raised-button color="primary" (click)="dialogNewEmployee()">New Employee</button>
+      <div class="mat-elevation-z8">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field> 
+    
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="fullName">
+            <th mat-header-cell *matHeaderCellDef> Full Name. </th>
+            <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+          </ng-container>
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef> Department.</th>
+            <td mat-cell *matCellDef="let element"> {{element.departmentName
+            }} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="salary">
+            <th mat-header-cell *matHeaderCellDef> Salary. </th>
+            <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+          </ng-container>
+      
+          
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="contractDate">
+                <th mat-header-cell *matHeaderCellDef> ContractDate </th>
+                <td mat-cell *matCellDef="let element"> {{element.contractDate}} </td>
+              </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-icon-button color="black" 
+              (click)="dialogEditEmployee(element)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" 
+              (click)="dialogDeleteEmployee(element)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            
+            
+    
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>  
+    </div>  
+  </ng-container>
+  <!-- Unauthorized -->
   <ng-container unauthorized>
     <h1>Unauthorized</h1>
+    <div class="main">
+      <h1>Employee List</h1>
+      <!-- <button mat-raised-button color="primary" (click)="dialogNewEmployee()">New Employee</button> -->
+      <div class="mat-elevation-z8">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field> 
+    
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="fullName">
+            <th mat-header-cell *matHeaderCellDef> Full Name. </th>
+            <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+          </ng-container>
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef> Department.</th>
+            <td mat-cell *matCellDef="let element"> {{element.departmentName
+            }} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="salary">
+            <th mat-header-cell *matHeaderCellDef> Salary. </th>
+            <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+          </ng-container>
+      
+          
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="contractDate">
+                <th mat-header-cell *matHeaderCellDef> ContractDate </th>
+                <td mat-cell *matCellDef="let element"> {{element.contractDate}} </td>
+              </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> 
+              <!-- <button mat-icon-button color="black" 
+              (click)="dialogEditEmployee(element)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" 
+              (click)="dialogDeleteEmployee(element)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button> -->
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>  
+    </div>  
   </ng-container>
 </app-authorized>
 
-<div class="main">
-  <h1>Employee List</h1>
-  <button mat-raised-button color="primary" (click)="dialogNewEmployee()">New Employee</button>
-  <div class="mat-elevation-z8">
-    <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-    </mat-form-field> 
-
-    <table mat-table [dataSource]="dataSource">
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="fullName">
-        <th mat-header-cell *matHeaderCellDef> Full Name. </th>
-        <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
-      </ng-container>
-  
-      <!-- Position Column -->
-      <ng-container matColumnDef="department">
-        <th mat-header-cell *matHeaderCellDef> Department.</th>
-        <td mat-cell *matCellDef="let element"> {{element.departmentName
-        }} </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="salary">
-        <th mat-header-cell *matHeaderCellDef> Salary. </th>
-        <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
-      </ng-container>
-  
-      
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="contractDate">
-            <th mat-header-cell *matHeaderCellDef> ContractDate </th>
-            <td mat-cell *matCellDef="let element"> {{element.contractDate}} </td>
-          </ng-container>
-      <!-- Weight Column -->
-      <ng-container matColumnDef="Actions">
-        <th mat-header-cell *matHeaderCellDef> Actions </th>
-        <td mat-cell *matCellDef="let element"> 
-          <button mat-icon-button color="black" 
-          (click)="dialogEditEmployee(element)"
-          >
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-icon-button color="warn" 
-          (click)="dialogDeleteEmployee(element)"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
-        
-        
-
-        </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                   showFirstLastButtons
-                   aria-label="Select page of periodic elements">
-    </mat-paginator>
-  </div>
-  
-</div>

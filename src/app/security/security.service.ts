@@ -9,4 +9,8 @@ export class SecurityService {
   isLogged():boolean {
     return true;
   }
+
+  obtainRole():string {
+    return 'admin';
+  }
 }
