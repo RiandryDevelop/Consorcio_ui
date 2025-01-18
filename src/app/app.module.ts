@@ -21,12 +21,14 @@ import { MatDialogModule} from "@angular/material/dialog";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { DialogAddEditComponent } from './Dialogs/dialog-add-edit/dialog-add-edit.component';
 import { DialogDeleteComponent } from './Dialogs/dialog-delete/dialog-delete.component';
+import { AuthorizedComponent } from './security/authorized/authorized.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogAddEditComponent,
-    DialogDeleteComponent
+    DialogDeleteComponent,
+    AuthorizedComponent,
   ],
   imports: [
   MatGridListModule,
@@ -47,6 +49,6 @@ import { DialogDeleteComponent } from './Dialogs/dialog-delete/dialog-delete.com
   ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

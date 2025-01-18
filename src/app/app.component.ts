@@ -3,7 +3,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogAddEditComponent } from "./Dialogs/dialog-add-edit/dialog-add-edit.component";
-
  
 
 import { Employee } from "./Interfaces/employee";
@@ -13,7 +12,8 @@ import { DialogDeleteComponent } from './Dialogs/dialog-delete/dialog-delete.com
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
 export class AppComponent implements AfterViewInit,OnInit{
   title = 'Consorcio_ui';
