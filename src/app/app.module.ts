@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from "@angular/forms";
 import {MatTableModule} from "@angular/material/table"
 import {MatPaginatorModule} from "@angular/material/paginator"
-import {HttpClientModule} from '@angular/common/http'
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 //
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
@@ -23,32 +23,25 @@ import { DialogAddEditComponent } from './Dialogs/dialog-add-edit/dialog-add-edi
 import { DialogDeleteComponent } from './Dialogs/dialog-delete/dialog-delete.component';
 import { AuthorizedComponent } from './security/authorized/authorized.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    DialogAddEditComponent,
-    DialogDeleteComponent,
-    AuthorizedComponent,
-  ],
-  imports: [
-  MatGridListModule,
-  MatDialogModule,
-  MatIconModule,
-  MatSnackBarModule,
-  MatFormFieldModule,
-  MatInputModule ,
-  MatSelectModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  BrowserModule,
-  BrowserAnimationsModule,
-  HttpClientModule,
-  MatPaginatorModule,
-  MatTableModule,
-  MatButtonModule,
-  ReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: []
-})
+@NgModule({ declarations: [
+        AppComponent,
+        DialogAddEditComponent,
+        DialogDeleteComponent,
+        AuthorizedComponent,
+    ],
+    bootstrap: [], imports: [MatGridListModule,
+        MatDialogModule,
+        MatIconModule,
+        MatSnackBarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatButtonModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
