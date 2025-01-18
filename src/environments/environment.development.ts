@@ -1,4 +1,4 @@
 export const environmentDev = {
     production:false,
-    endPoint:'http://localhost:5229/' 
+    endPoint:'http://localhost:5000/' 
 };
