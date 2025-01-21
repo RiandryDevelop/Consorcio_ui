@@ -7,8 +7,8 @@ import { MAT_DATE_FORMATS } from "@angular/material/core";
 import * as moment from 'moment';
 import { Employee } from "src/app/Interfaces/employee";
 import { Department } from "src/app/Interfaces/department";
-import { EmployeeService } from 'src/app/Services/employee.service';
-import { DepartmentService } from 'src/app/Services/department.service';
+import { EmployeeService } from 'src/app/core/Services/employee.service';
+import { DepartmentService } from 'src/app/core/Services/department.service';
 
 
 

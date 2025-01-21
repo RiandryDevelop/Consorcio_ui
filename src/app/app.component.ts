@@ -6,7 +6,7 @@ import { DialogAddEditComponent } from "./Dialogs/dialog-add-edit/dialog-add-edi
  
 
 import { Employee } from "./Interfaces/employee";
-import { EmployeeService } from './Services/employee.service';
+import { EmployeeService } from './core/Services/employee.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogDeleteComponent } from './Dialogs/dialog-delete/dialog-delete.component';
 @Component({
